@@ -1,0 +1,52 @@
+[
+  {
+    "name": "section_title",
+    "label": "Section Heading (H2)",
+    "type": "text",
+    "default": "Frequently Asked Questions"
+  },
+  {
+    "name": "emit_schema",
+    "label": "Output Automatic FAQPage JSON-LD Schema",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "name": "items",
+    "label": "FAQ Items",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 20,
+      "default": 3
+    },
+    "children": [
+      {
+        "name": "question",
+        "label": "Question",
+        "type": "text",
+        "default": "Does this theme run on HubSpot Content Hub Starter?"
+      },
+      {
+        "name": "answer",
+        "label": "Answer",
+        "type": "text",
+        "default": "Yes. Every module and template works on Content Hub Starter ($20/month) with zero HubDB or Enterprise dependencies."
+      }
+    ],
+    "default": [
+      {
+        "question": "Does this theme run on HubSpot Content Hub Starter?",
+        "answer": "Yes. Every module and template works on Content Hub Starter ($20/month) with zero HubDB or Enterprise dependencies."
+      },
+      {
+        "question": "Why does this starter avoid jQuery and animation libraries?",
+        "answer": "Removing heavy JavaScript libraries keeps asset payloads under 15 KB and delivers 95+ mobile Google Lighthouse performance out of the box."
+      },
+      {
+        "question": "Can marketers edit pages without touching code?",
+        "answer": "Yes. All sections use native HubSpot drag-and-drop areas with brand-locked spacing and typography tokens."
+      }
+    ]
+  }
+]

@@ -1,0 +1,19 @@
+<!--
+  templateType: error_page
+  isAvailableForNewContent: false
+  label: 404 Error Page
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+  <section class="nr-section" style="text-align: center; padding: 7rem 0;">
+    <div class="nr-container" style="max-width: 560px;">
+      <p style="font-size: 0.85rem; font-weight: 700; color: var(--nr-accent); margin: 0 0 0.5rem;">404</p>
+      <h1 style="font-size: 2.25rem; margin: 0 0 1rem;">Page not found</h1>
+      <p style="color: var(--nr-muted); margin: 0 0 2rem;">
+        The page you requested could not be found or has moved.
+      </p>
+      <a class="nr-btn" href="/">Back to Homepage</a>
+    </div>
+  </section>
+{% endblock body %}

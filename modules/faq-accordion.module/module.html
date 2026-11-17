@@ -1,0 +1,39 @@
+<section class="nr-section">
+  <div class="nr-container" style="max-width: 780px;">
+    {% if module.section_title %}
+      <h2 style="font-size: 1.85rem; margin: 0 0 2rem; text-align: center;">
+        {{ module.section_title }}
+      </h2>
+    {% endif %}
+
+    <div>
+      {% for item in module.items %}
+        <details class="nr-faq-item"{% if loop.first %} open{% endif %}>
+          <summary>{{ item.question }}</summary>
+          <div class="nr-faq-answer">{{ item.answer }}</div>
+        </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if module.emit_schema and module.items|length > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in module.items %}
+    {
+      "@type": "Question",
+      "name": "{{ item.question|escape }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.answer|escape }}"
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

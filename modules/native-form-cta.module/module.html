@@ -1,0 +1,37 @@
+<section id="contact" class="nr-section" style="background-color: var(--nr-surface); border-top: 1px solid var(--nr-border);">
+  <div class="nr-container">
+    <div class="nr-grid-2" style="align-items: center;">
+      <div>
+        {% if module.eyebrow %}
+          <p style="font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--nr-accent); margin: 0 0 0.6rem;">
+            {{ module.eyebrow }}
+          </p>
+        {% endif %}
+        <h2 style="font-size: 2rem; line-height: 1.2; margin: 0 0 1rem;">
+          {{ module.headline }}
+        </h2>
+        {% if module.description %}
+          <p style="font-size: 1rem; color: var(--nr-muted); margin: 0;">
+            {{ module.description }}
+          </p>
+        {% endif %}
+      </div>
+
+      <div class="nr-form-card" style="background: var(--nr-bg); border: 1px solid var(--nr-border); border-radius: var(--nr-radius); padding: 2rem;">
+        {% if module.form_field.form_id %}
+          {% form
+            form_to_use="{{ module.form_field.form_id }}"
+            response_response_type="{{ module.form_field.response_type }}"
+            response_message="{{ module.form_field.message }}"
+            response_redirect_id="{{ module.form_field.redirect_id }}"
+            response_redirect_url="{{ module.form_field.redirect_url }}"
+          %}
+        {% else %}
+          <p style="font-size: 0.9rem; color: var(--nr-muted); margin: 0;">
+            Select a HubSpot Form in the module editor sidebar to render native CRM lead capture here.
+          </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

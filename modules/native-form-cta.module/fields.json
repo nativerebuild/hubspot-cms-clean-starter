@@ -1,0 +1,29 @@
+[
+  {
+    "name": "eyebrow",
+    "label": "Eyebrow",
+    "type": "text",
+    "default": "FREE ASSESSMENT"
+  },
+  {
+    "name": "headline",
+    "label": "Section Heading (H2)",
+    "type": "text",
+    "default": "Ready to Launch on HubSpot CMS?"
+  },
+  {
+    "name": "description",
+    "label": "Supporting Copy",
+    "type": "text",
+    "default": "Submit your details below. Every submission syncs directly to your HubSpot CRM contact timeline with full session attribution."
+  },
+  {
+    "name": "form_field",
+    "label": "HubSpot Form",
+    "type": "form",
+    "default": {
+      "response_type": "inline",
+      "message": "Thanks for submitting the form."
+    }
+  }
+]

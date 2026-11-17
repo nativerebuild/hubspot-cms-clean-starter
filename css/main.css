@@ -15,6 +15,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -22,6 +26,11 @@ body {
   color: var(--nr-text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .nr-container {
@@ -46,11 +55,31 @@ body {
   text-decoration: none;
   background-color: var(--nr-accent);
   color: #ffffff;
+  border: 1px solid transparent;
+  cursor: pointer;
   transition: opacity 0.15s ease;
 }
 
 .nr-btn:hover {
   opacity: 0.9;
+}
+
+.nr-btn-secondary {
+  background-color: transparent;
+  color: var(--nr-text);
+  border-color: var(--nr-border);
+}
+
+.nr-btn-secondary:hover {
+  background-color: var(--nr-surface);
+  opacity: 1;
+}
+
+/* Grid Utilities */
+.nr-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
 }
 
 .nr-grid-3 {
@@ -59,11 +88,196 @@ body {
   gap: 1.5rem;
 }
 
+/* Global Header & Zero-JS Mobile Menu */
+.nr-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--nr-border);
+}
+
+.nr-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+  gap: 1.5rem;
+}
+
+.nr-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--nr-text);
+  text-decoration: none;
+}
+
+.nr-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.75rem;
+}
+
+.nr-nav a {
+  color: var(--nr-muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.nr-nav a:hover {
+  color: var(--nr-text);
+}
+
+.nr-mobile-menu {
+  display: none;
+}
+
+/* Native HubSpot Form Styling (Zero CLS) */
+.nr-form-card .hs-form-field {
+  margin-bottom: 1rem;
+}
+
+.nr-form-card label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--nr-text);
+}
+
+.nr-form-card .hs-input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--nr-border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--nr-text);
+  background: var(--nr-bg);
+}
+
+.nr-form-card .hs-input:focus {
+  outline: 2px solid var(--nr-accent);
+  outline-offset: 1px;
+}
+
+.nr-form-card .hs-button {
+  width: 100%;
+  padding: 0.8rem 1.25rem;
+  border: 0;
+  border-radius: 8px;
+  background-color: var(--nr-accent);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.nr-form-card .hs-error-msgs {
+  list-style: none;
+  padding: 0;
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+  color: #dc2626;
+}
+
+/* Zero-JS Native Accordion */
+.nr-faq-item {
+  border: 1px solid var(--nr-border);
+  border-radius: var(--nr-radius);
+  background: var(--nr-bg);
+  margin-bottom: 0.75rem;
+}
+
+.nr-faq-item summary {
+  padding: 1.15rem 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nr-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.nr-faq-item summary::after {
+  content: "+";
+  font-size: 1.2rem;
+  color: var(--nr-muted);
+}
+
+.nr-faq-item[open] summary::after {
+  content: "−";
+  color: var(--nr-accent);
+}
+
+.nr-faq-answer {
+  padding: 1rem 1.25rem 1.25rem;
+  color: var(--nr-muted);
+  font-size: 0.95rem;
+  border-top: 1px solid var(--nr-border);
+}
+
 @media (max-width: 767px) {
   .nr-section {
     padding: 3rem 0;
   }
+  .nr-grid-2,
   .nr-grid-3 {
     grid-template-columns: 1fr;
+  }
+  .nr-nav,
+  .nr-header-cta {
+    display: none;
+  }
+  .nr-mobile-menu {
+    display: block;
+    position: relative;
+  }
+  .nr-mobile-menu summary {
+    list-style: none;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid var(--nr-border);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .nr-mobile-menu[open] .nr-mobile-drawer {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    margin-top: 0.5rem;
+    width: 220px;
+    background: var(--nr-bg);
+    border: 1px solid var(--nr-border);
+    border-radius: var(--nr-radius);
+    padding: 1rem;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  }
+  .nr-mobile-drawer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .nr-mobile-drawer a {
+    color: var(--nr-text);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
   }
 }

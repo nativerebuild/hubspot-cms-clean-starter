@@ -1,0 +1,27 @@
+<section style="padding: 2.25rem 0; border-top: 1px solid var(--nr-border); border-bottom: 1px solid var(--nr-border); background-color: var(--nr-bg);">
+  <div class="nr-container" style="text-align: center;">
+    {% if module.label %}
+      <p style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--nr-muted); margin: 0 0 1.25rem;">
+        {{ module.label }}
+      </p>
+    {% endif %}
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.5rem;">
+      {% for item in module.logos %}
+        {% if item.logo_image.src %}
+          <img
+            src="{{ item.logo_image.src }}"
+            alt="{{ item.logo_image.alt|default(item.company_name) }}"
+            width="120"
+            height="32"
+            style="height: 28px; width: auto; opacity: 0.75;"
+            loading="lazy"
+          />
+        {% else %}
+          <span style="font-weight: 700; font-size: 1rem; color: var(--nr-muted); opacity: 0.8;">
+            {{ item.company_name }}
+          </span>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

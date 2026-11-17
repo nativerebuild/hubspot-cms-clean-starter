@@ -1,0 +1,95 @@
+[
+  {
+    "name": "colors",
+    "label": "Brand Colors",
+    "type": "group",
+    "children": [
+      {
+        "name": "accent",
+        "label": "Primary Accent",
+        "type": "color",
+        "default": { "color": "#ff5c35", "opacity": 100 }
+      },
+      {
+        "name": "background",
+        "label": "Page Background",
+        "type": "color",
+        "default": { "color": "#ffffff", "opacity": 100 }
+      },
+      {
+        "name": "surface",
+        "label": "Surface / Card Tint",
+        "type": "color",
+        "default": { "color": "#f8fafc", "opacity": 100 }
+      },
+      {
+        "name": "text",
+        "label": "Primary Text",
+        "type": "color",
+        "default": { "color": "#0f172a", "opacity": 100 }
+      },
+      {
+        "name": "muted",
+        "label": "Muted Text",
+        "type": "color",
+        "default": { "color": "#475569", "opacity": 100 }
+      },
+      {
+        "name": "border",
+        "label": "Border Color",
+        "type": "color",
+        "default": { "color": "#e2e8f0", "opacity": 100 }
+      }
+    ]
+  },
+  {
+    "name": "layout",
+    "label": "Layout & Spacing",
+    "type": "group",
+    "children": [
+      {
+        "name": "container_width",
+        "label": "Max Container Width (px)",
+        "type": "number",
+        "min": 960,
+        "max": 1440,
+        "step": 20,
+        "default": 1120
+      },
+      {
+        "name": "border_radius",
+        "label": "Card Border Radius (px)",
+        "type": "number",
+        "min": 0,
+        "max": 24,
+        "step": 2,
+        "default": 10
+      }
+    ]
+  },
+  {
+    "name": "brand",
+    "label": "SEO & Organization Schema",
+    "type": "group",
+    "children": [
+      {
+        "name": "organization_name",
+        "label": "Organization Name",
+        "type": "text",
+        "default": "Your Company"
+      },
+      {
+        "name": "organization_url",
+        "label": "Canonical Website URL",
+        "type": "text",
+        "default": "https://example.com"
+      },
+      {
+        "name": "logo",
+        "label": "Brand Logo",
+        "type": "image",
+        "default": { "src": "", "alt": "Company Logo" }
+      }
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "label": "FAQ Accordion (with Auto FAQPage Schema)",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "host_template_types": ["PAGE", "LANDING_PAGE", "BLOG_POST", "BLOG_LISTING"],
+  "is_available_for_new_content": true
+}

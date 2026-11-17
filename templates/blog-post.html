@@ -1,0 +1,62 @@
+<!--
+  templateType: blog_post
+  isAvailableForNewContent: true
+  label: Clean Blog Post
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+  <article class="nr-section">
+    <div class="nr-container" style="max-width: 760px;">
+      <header style="margin-bottom: 2.5rem;">
+        <p style="font-size: 0.82rem; color: var(--nr-muted); margin: 0 0 0.75rem;">
+          {{ content.publish_date_localized }}
+          {% if content.blog_post_author %}
+            · By {{ content.blog_post_author.display_name }}
+          {% endif %}
+        </p>
+        <h1 style="font-size: clamp(1.9rem, 3.5vw, 2.75rem); line-height: 1.15; margin: 0 0 1.25rem;">
+          {{ content.name }}
+        </h1>
+        {% if content.featured_image %}
+          <img
+            src="{{ content.featured_image }}"
+            alt="{{ content.featured_image_alt_text|default(content.name) }}"
+            width="760"
+            height="420"
+            style="border-radius: var(--nr-radius); width: 100%; height: auto;"
+            loading="eager"
+            fetchpriority="high"
+          />
+        {% endif %}
+      </header>
+
+      <div style="font-size: 1.05rem; line-height: 1.75; color: var(--nr-text);">
+        {{ content.post_body }}
+      </div>
+    </div>
+  </article>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ content.name|striptags|escape }}",
+    "description": "{{ content.meta_description|default('')|escape }}",
+    "datePublished": "{{ content.publish_date|datetimeformat('%Y-%m-%dT%H:%M:%SZ') }}",
+    "dateModified": "{{ content.updated|datetimeformat('%Y-%m-%dT%H:%M:%SZ') }}",
+    "mainEntityOfPage": "{{ content.absolute_url|escape }}",
+    {% if content.featured_image %}
+    "image": ["{{ content.featured_image|escape }}"],
+    {% endif %}
+    "author": {
+      "@type": "Person",
+      "name": "{{ content.blog_post_author.display_name|default('Editorial Team')|escape }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ theme.brand.organization_name|default('Your Company')|escape }}"
+    }
+  }
+  </script>
+{% endblock body %}

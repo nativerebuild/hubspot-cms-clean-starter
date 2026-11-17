@@ -1,0 +1,20 @@
+<!--
+  templateType: global_partial
+  label: Site Footer
+-->
+<footer style="border-top: 1px solid var(--nr-border); padding: 3rem 0; background-color: var(--nr-bg);">
+  <div class="nr-container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem;">
+    <div>
+      <strong style="font-size: 0.95rem;">
+        {{ theme.brand.organization_name|default("Your Company") }}
+      </strong>
+      <p style="font-size: 0.82rem; color: var(--nr-muted); margin: 0.35rem 0 0;">
+        © {{ local_dt|datetimeformat("%Y") }} {{ theme.brand.organization_name|default("Your Company") }}. All rights reserved.
+      </p>
+    </div>
+
+    <nav aria-label="Footer Navigation" style="display: flex; gap: 1.5rem; font-size: 0.85rem;">
+      {% menu "footer_nav" %}
+    </nav>
+  </div>
+</footer>

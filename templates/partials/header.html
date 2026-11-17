@@ -1,0 +1,39 @@
+<!--
+  templateType: global_partial
+  label: Site Header
+-->
+<header class="nr-header">
+  <div class="nr-container nr-header-inner">
+    <a class="nr-brand" href="/">
+      {% if theme.brand.logo.src %}
+        <img
+          src="{{ theme.brand.logo.src }}"
+          alt="{{ theme.brand.logo.alt|default(theme.brand.organization_name) }}"
+          width="140"
+          height="32"
+          style="height: 28px; width: auto;"
+          loading="eager"
+        />
+      {% else %}
+        <span>{{ theme.brand.organization_name|default("Your Company") }}</span>
+      {% endif %}
+    </a>
+
+    <nav class="nr-nav" aria-label="Main Navigation">
+      {% menu "main_nav" %}
+    </nav>
+
+    <div class="nr-header-cta">
+      <a class="nr-btn" href="#contact" style="padding: 0.55rem 1.05rem; font-size: 0.875rem;">
+        Get Started
+      </a>
+    </div>
+
+    <details class="nr-mobile-menu">
+      <summary aria-label="Toggle Menu">Menu</summary>
+      <div class="nr-mobile-drawer">
+        {% menu "mobile_nav" %}
+      </div>
+    </details>
+  </div>
+</header>

@@ -1,0 +1,24 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ theme.brand.organization_name|default('Your Company')|escape }}",
+    "url": "{{ theme.brand.organization_url|default(request.scheme ~ '://' ~ request.domain)|escape }}"
+    {% if theme.brand.logo.src %},
+    "logo": "{{ theme.brand.logo.src|escape }}"
+    {% endif %}
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "{{ page_meta.html_title|escape }}",
+    "url": "{{ content.absolute_url|escape }}",
+    "description": "{{ page_meta.meta_description|default('')|escape }}"
+  }
+]
+</script>

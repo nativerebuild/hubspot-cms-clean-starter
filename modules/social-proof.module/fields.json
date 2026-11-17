@@ -1,0 +1,38 @@
+[
+  {
+    "name": "label",
+    "label": "Trust Bar Label",
+    "type": "text",
+    "default": "TRUSTED BY MODERN B2B TEAMS"
+  },
+  {
+    "name": "logos",
+    "label": "Partner / Customer Logos",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 8,
+      "default": 4
+    },
+    "children": [
+      {
+        "name": "company_name",
+        "label": "Company Name (Fallback Text)",
+        "type": "text",
+        "default": "Acme Corp"
+      },
+      {
+        "name": "logo_image",
+        "label": "Logo Image (Optional)",
+        "type": "image",
+        "default": { "src": "", "alt": "Partner Logo" }
+      }
+    ],
+    "default": [
+      { "company_name": "Acme Cloud", "logo_image": { "src": "", "alt": "Acme Cloud" } },
+      { "company_name": "Northstar AI", "logo_image": { "src": "", "alt": "Northstar AI" } },
+      { "company_name": "VectorOps", "logo_image": { "src": "", "alt": "VectorOps" } },
+      { "company_name": "Baseline HQ", "logo_image": { "src": "", "alt": "Baseline HQ" } }
+    ]
+  }
+]

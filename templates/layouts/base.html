@@ -12,12 +12,23 @@
       <meta name="description" content="{{ page_meta.meta_description }}" />
     {% endif %}
     {{ require_css(get_asset_url("../../css/main.css")) }}
+    {{ require_css(get_asset_url("../../css/theme-overrides.css")) }}
+    {% include "../partials/seo-schema.html" %}
     {{ standard_header_includes }}
   </head>
   <body>
+    {% block header %}
+      {% global_partial path="../partials/header.html" %}
+    {% endblock header %}
+
     <main id="main-content">
       {% block body %}{% endblock body %}
     </main>
+
+    {% block footer %}
+      {% global_partial path="../partials/footer.html" %}
+    {% endblock footer %}
+
     {{ standard_footer_includes }}
   </body>
 </html>

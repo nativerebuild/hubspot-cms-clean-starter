@@ -1,0 +1,10 @@
+:root {
+  --nr-accent: {{ theme.colors.accent.color|default('#ff5c35') }};
+  --nr-bg: {{ theme.colors.background.color|default('#ffffff') }};
+  --nr-surface: {{ theme.colors.surface.color|default('#f8fafc') }};
+  --nr-text: {{ theme.colors.text.color|default('#0f172a') }};
+  --nr-muted: {{ theme.colors.muted.color|default('#475569') }};
+  --nr-border: {{ theme.colors.border.color|default('#e2e8f0') }};
+  --nr-radius: {{ theme.layout.border_radius|default(10) }}px;
+  --nr-container: {{ theme.layout.container_width|default(1120) }}px;
+}
