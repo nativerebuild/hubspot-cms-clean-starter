@@ -1,0 +1,17 @@
+<section class="nr-section" style="background-color: var(--nr-surface); border-top: 1px solid var(--nr-border); border-bottom: 1px solid var(--nr-border);">
+  <div class="nr-container">
+    {% if module.section_title %}
+      <h2 style="font-size: 1.75rem; margin: 0 0 2rem; text-align: center;">
+        {{ module.section_title }}
+      </h2>
+    {% endif %}
+    <div class="nr-grid-3">
+      {% for item in module.items %}
+        <div style="background: var(--nr-bg); border: 1px solid var(--nr-border); border-radius: var(--nr-radius); padding: 1.5rem;">
+          <h3 style="font-size: 1.1rem; margin: 0 0 0.5rem;">{{ item.title }}</h3>
+          <p style="font-size: 0.92rem; color: var(--nr-muted); margin: 0;">{{ item.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

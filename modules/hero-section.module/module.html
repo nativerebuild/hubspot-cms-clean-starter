@@ -1,0 +1,22 @@
+<section class="nr-section">
+  <div class="nr-container" style="max-width: 780px; text-align: center;">
+    {% if module.eyebrow %}
+      <p style="font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--nr-accent); margin-bottom: 0.75rem;">
+        {{ module.eyebrow }}
+      </p>
+    {% endif %}
+    <h1 style="font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.12; margin: 0 0 1.25rem;">
+      {{ module.headline }}
+    </h1>
+    {% if module.subheadline %}
+      <p style="font-size: 1.125rem; color: var(--nr-muted); margin: 0 auto 2rem; max-width: 640px;">
+        {{ module.subheadline }}
+      </p>
+    {% endif %}
+    {% if module.cta_text and module.cta_link.href %}
+      <a class="nr-btn" href="{{ module.cta_link.href }}">
+        {{ module.cta_text }}
+      </a>
+    {% endif %}
+  </div>
+</section>

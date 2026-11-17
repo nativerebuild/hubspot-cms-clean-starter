@@ -1,0 +1,46 @@
+[
+  {
+    "name": "section_title",
+    "label": "Section Heading (H2)",
+    "type": "text",
+    "default": "Engineered for Speed and Marketer Autonomy"
+  },
+  {
+    "name": "items",
+    "label": "Feature Cards",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 6,
+      "default": 3
+    },
+    "children": [
+      {
+        "name": "title",
+        "label": "Card Title",
+        "type": "text",
+        "default": "Zero JavaScript Bloat"
+      },
+      {
+        "name": "description",
+        "label": "Card Description",
+        "type": "text",
+        "default": "No jQuery, slick sliders, or unused global CSS libraries slowing down mobile page loads."
+      }
+    ],
+    "default": [
+      {
+        "title": "Zero JavaScript Bloat",
+        "description": "No jQuery, slick sliders, or unused global CSS libraries slowing down mobile page loads."
+      },
+      {
+        "title": "Content Hub Starter Ready",
+        "description": "Deploy custom modular themes on HubSpot's $20/mo Starter tier without paying for Enterprise."
+      },
+      {
+        "title": "Safe Drag-and-Drop Editing",
+        "description": "Brand spacing and typography stay locked while marketers freely edit headlines and sections."
+      }
+    ]
+  }
+]

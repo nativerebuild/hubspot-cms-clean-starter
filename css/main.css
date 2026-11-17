@@ -1,0 +1,69 @@
+:root {
+  --nr-bg: #ffffff;
+  --nr-surface: #f8fafc;
+  --nr-text: #0f172a;
+  --nr-muted: #475569;
+  --nr-accent: #ff5c35;
+  --nr-border: #e2e8f0;
+  --nr-radius: 10px;
+  --nr-container: 1120px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--nr-bg);
+  color: var(--nr-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.nr-container {
+  width: 100%;
+  max-width: var(--nr-container);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.nr-section {
+  padding: 4.5rem 0;
+}
+
+.nr-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.35rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  background-color: var(--nr-accent);
+  color: #ffffff;
+  transition: opacity 0.15s ease;
+}
+
+.nr-btn:hover {
+  opacity: 0.9;
+}
+
+.nr-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .nr-section {
+    padding: 3rem 0;
+  }
+  .nr-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}

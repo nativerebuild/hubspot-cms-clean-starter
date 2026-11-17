@@ -1,0 +1,36 @@
+[
+  {
+    "name": "eyebrow",
+    "label": "Eyebrow Text",
+    "type": "text",
+    "default": "CLEAN HUBSPOT CMS THEME"
+  },
+  {
+    "name": "headline",
+    "label": "Headline (H1)",
+    "type": "text",
+    "default": "Fast, Modular HubSpot Pages Without Theme Bloat"
+  },
+  {
+    "name": "subheadline",
+    "label": "Subheadline",
+    "type": "text",
+    "default": "Built with semantic HubL and scoped CSS so marketing teams ship landing pages in minutes with 95+ Core Web Vitals."
+  },
+  {
+    "name": "cta_text",
+    "label": "Primary CTA Text",
+    "type": "text",
+    "default": "Get Started"
+  },
+  {
+    "name": "cta_link",
+    "label": "Primary CTA URL",
+    "type": "url",
+    "default": {
+      "content_id": null,
+      "href": "https://nativerebuild.com",
+      "type": "EXTERNAL"
+    }
+  }
+]
